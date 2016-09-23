@@ -1,5 +1,7 @@
 package org.yugzan.tenant;
 
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -18,6 +20,8 @@ public class DynamicCollectionApplication implements CommandLineRunner{
     
     @Override
     public void run(String... args) throws Exception {
-        test.insert();
+        Random r = new Random();
+        test.insert( r.nextInt(100)  );
+        test.insert( r.nextInt(100)  );
     }
 }

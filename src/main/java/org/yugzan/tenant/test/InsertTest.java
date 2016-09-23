@@ -21,8 +21,8 @@ public class InsertTest {
     @Autowired
     private MyTenantProvider provider;
     
-    public void insert(){
-        provider.setTenantName(  "random_"+ new Random().nextInt(100)  );
+    public void insert(int value){
+        provider.setTenantName(  "random_"+ value);
         repo.save( new MyDocument("1", "joys") );
     }
 
